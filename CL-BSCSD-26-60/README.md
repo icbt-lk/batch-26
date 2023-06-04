@@ -1,2 +1,2 @@
-26 batch repo1
+26 batch repo
 nuwan athukorala
