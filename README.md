@@ -1,3 +1,3 @@
-Welcome to Github
+README
 
-Sandusha AA
+Thishon
