@@ -4,6 +4,11 @@
  */
 package com.mycompany.test.app;
 
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -12,12 +17,17 @@ import java.util.List;
  * @author hnd
  */
 public class MySQLUtils implements DBUtil {
-  
-    List<Student> students = new ArrayList<>();
-
+    static final String DB_URL = "jdbc:mysql://localhost:3306/icbt";
+    static final String USER = "root";
+    static final String PASS = "root";
+    Connection conn;
+    
     public MySQLUtils() {
-        students.add(new Student("ST01", "John", "1991", "M"));
-        
+        try {
+         conn = DriverManager.getConnection(DB_URL, USER, PASS);
+        } catch(SQLException e) {
+             System.out.println("Cannot be connected to MySQL Server" + e);
+        } 
     }
     
     
@@ -25,51 +35,80 @@ public class MySQLUtils implements DBUtil {
     
     @Override
     public List<Student> getStudents() {
-        //Operate with the MySQL DB
-        return new ArrayList<>();
+        List<Student> students = new ArrayList<>();
+        try {
+            Statement stmt = conn.createStatement();
+            ResultSet rs = stmt.executeQuery("SELECT * FROM students");		      
+            while(rs.next()){
+                Student st = new Student();
+                st.setNo(rs.getInt("id"));
+                st.setName(rs.getString("name"));
+                st.setDob(rs.getString("dob"));
+                students.add(st);
+            }
+        } catch(SQLException e) {
+            System.out.println("Error occurrd while reading " + e);
+        }
+        return students;
     }
 
     @Override
-    public Student getStudent(String stNo) {
-        for(Student student : students) {
-            if (student.getNo().equals(stNo)) {
-                return student;
+    public Student getStudent(int stNo) {
+        Student st = null;
+        try {
+            Statement stmt = conn.createStatement();
+            ResultSet rs = stmt.executeQuery("SELECT * FROM students WHERE id=" + stNo);		      
+            while(rs.next()){
+                st = new Student();
+                st.setNo(rs.getInt("id"));
+                st.setName(rs.getString("name"));
+                st.setDob(rs.getString("dob"));
+                return st;
             }
+        } catch(SQLException e) {
+            System.out.println("Error occurrd while reading " + e);
         }
-        return null;
+        return st;
     }
 
     @Override
     public boolean addStudent(Student st) {
-       students.add(st);
-       return true;
+        try {
+            Statement stmt = conn.createStatement();
+            stmt.executeUpdate("INSERT INTO students (id, name, dob)"
+                    + " VALUES ('" + st.getNo() + "', '" + st.getName() + "', '" + st.getDob()+ "')");
+            return true;
+        } catch(SQLException e) {
+            System.out.println("Error occurrd while adding " + e);
+            return false;
+        }
     }
 
     @Override
     public boolean updateStudent(Student st) {
-        int index = 0;
-        
-        for(Student student : students) {
-            if (student.getNo().equals(st.getNo())) {
-                index = students.indexOf(student);
-                break;
-            }
+        try {
+            Statement stmt = conn.createStatement();
+            stmt.executeUpdate(
+                    "UPDATE students SET name = '" + st.getName() 
+                            + "', dob = '" + st.getDob() 
+                            + "' WHERE (id = '" + st.getNo() +  "')");
+            return true;
+        } catch(SQLException e) {
+            System.out.println("Error occurrd while updating " + e);
+            return false;
         }
-        students.remove(index);
-        students.add(st);
-        return true;
     }
 
     @Override
-    public boolean deleteStudent(String stNo) {
-        int index = 0;
-        for(Student student : students) {
-            if (student.getNo().equals(stNo)) {
-                index = students.indexOf(student);
-                break;
-            }
+    public boolean deleteStudent(int stNo) {
+        try {
+            Statement stmt = conn.createStatement();
+            stmt.executeUpdate(
+                    "DELETE FROM students WHERE (`id` = '"+ stNo +"');");
+            return true;
+        } catch(SQLException e) {
+            System.out.println("Error occurrd while deleting " + e);
+            return false;
         }
-        students.remove(index);
-        return true;
     }
 }

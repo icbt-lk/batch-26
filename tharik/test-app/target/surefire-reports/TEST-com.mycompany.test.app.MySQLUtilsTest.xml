@@ -1,26 +1,28 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report-3.0.xsd" version="3.0" name="com.mycompany.test.app.MySQLUtilsTest" time="0.084" tests="2" errors="0" skipped="0" failures="0">
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report-3.0.xsd" version="3.0" name="com.mycompany.test.app.MySQLUtilsTest" time="66.561" tests="1" errors="0" skipped="0" failures="0">
   <properties>
     <property name="sun.desktop" value="windows"/>
     <property name="awt.toolkit" value="sun.awt.windows.WToolkit"/>
+    <property name="jpda.address" value="58421"/>
     <property name="java.specification.version" value="11"/>
     <property name="sun.cpu.isalist" value="amd64"/>
     <property name="sun.jnu.encoding" value="Cp1252"/>
-    <property name="java.class.path" value="C:\Users\hnd\Documents\NetBeansProjects\test-app\target\test-classes;C:\Users\hnd\Documents\NetBeansProjects\test-app\target\classes;C:\Users\hnd\.m2\repository\org\junit\jupiter\junit-jupiter-api\5.6.0\junit-jupiter-api-5.6.0.jar;C:\Users\hnd\.m2\repository\org\apiguardian\apiguardian-api\1.1.0\apiguardian-api-1.1.0.jar;C:\Users\hnd\.m2\repository\org\opentest4j\opentest4j\1.2.0\opentest4j-1.2.0.jar;C:\Users\hnd\.m2\repository\org\junit\platform\junit-platform-commons\1.6.0\junit-platform-commons-1.6.0.jar;C:\Users\hnd\.m2\repository\org\junit\jupiter\junit-jupiter-params\5.6.0\junit-jupiter-params-5.6.0.jar;C:\Users\hnd\.m2\repository\org\junit\jupiter\junit-jupiter-engine\5.6.0\junit-jupiter-engine-5.6.0.jar;C:\Users\hnd\.m2\repository\org\junit\platform\junit-platform-engine\1.6.0\junit-platform-engine-1.6.0.jar;"/>
+    <property name="java.class.path" value="C:\Users\hnd\Documents\NetBeansProjects\test-app\target\test-classes;C:\Users\hnd\Documents\NetBeansProjects\test-app\target\classes;C:\Users\hnd\.m2\repository\org\junit\jupiter\junit-jupiter-api\5.6.0\junit-jupiter-api-5.6.0.jar;C:\Users\hnd\.m2\repository\org\apiguardian\apiguardian-api\1.1.0\apiguardian-api-1.1.0.jar;C:\Users\hnd\.m2\repository\org\opentest4j\opentest4j\1.2.0\opentest4j-1.2.0.jar;C:\Users\hnd\.m2\repository\org\junit\platform\junit-platform-commons\1.6.0\junit-platform-commons-1.6.0.jar;C:\Users\hnd\.m2\repository\org\junit\jupiter\junit-jupiter-params\5.6.0\junit-jupiter-params-5.6.0.jar;C:\Users\hnd\.m2\repository\org\junit\jupiter\junit-jupiter-engine\5.6.0\junit-jupiter-engine-5.6.0.jar;C:\Users\hnd\.m2\repository\org\junit\platform\junit-platform-engine\1.6.0\junit-platform-engine-1.6.0.jar;C:\Users\hnd\.m2\repository\com\mysql\mysql-connector-j\8.0.33\mysql-connector-j-8.0.33.jar;C:\Users\hnd\.m2\repository\com\google\protobuf\protobuf-java\3.21.9\protobuf-java-3.21.9.jar;"/>
     <property name="java.vm.vendor" value="Eclipse Adoptium"/>
     <property name="sun.arch.data.model" value="64"/>
     <property name="user.variant" value=""/>
     <property name="java.vendor.url" value="https://adoptium.net/"/>
     <property name="user.timezone" value="Asia/Colombo"/>
+    <property name="forkMode" value="once"/>
     <property name="java.vm.specification.version" value="11"/>
     <property name="os.name" value="Windows 10"/>
     <property name="user.country" value="US"/>
     <property name="sun.java.launcher" value="SUN_STANDARD"/>
     <property name="sun.boot.library.path" value="C:\Program Files\Eclipse Adoptium\jdk-11.0.19.7-hotspot\bin"/>
-    <property name="sun.java.command" value="C:\Users\hnd\AppData\Local\Temp\surefire10167641064363409347\surefirebooter-20230716103319013_3.jar C:\Users\hnd\AppData\Local\Temp\surefire10167641064363409347 2023-07-16T10-33-18_679-jvmRun1 surefire-20230716103319013_1tmp surefire_0-20230716103319013_2tmp"/>
+    <property name="sun.java.command" value="C:\Users\hnd\AppData\Local\Temp\surefire3145633668603203590\surefirebooter-20230723124415348_3.jar C:\Users\hnd\AppData\Local\Temp\surefire3145633668603203590 2023-07-23T12-44-14_975-jvmRun1 surefire-20230723124415348_1tmp surefire_0-20230723124415348_2tmp"/>
     <property name="jdk.debug" value="release"/>
     <property name="test" value="com.mycompany.test.app.MySQLUtilsTest"/>
-    <property name="surefire.test.class.path" value="C:\Users\hnd\Documents\NetBeansProjects\test-app\target\test-classes;C:\Users\hnd\Documents\NetBeansProjects\test-app\target\classes;C:\Users\hnd\.m2\repository\org\junit\jupiter\junit-jupiter-api\5.6.0\junit-jupiter-api-5.6.0.jar;C:\Users\hnd\.m2\repository\org\apiguardian\apiguardian-api\1.1.0\apiguardian-api-1.1.0.jar;C:\Users\hnd\.m2\repository\org\opentest4j\opentest4j\1.2.0\opentest4j-1.2.0.jar;C:\Users\hnd\.m2\repository\org\junit\platform\junit-platform-commons\1.6.0\junit-platform-commons-1.6.0.jar;C:\Users\hnd\.m2\repository\org\junit\jupiter\junit-jupiter-params\5.6.0\junit-jupiter-params-5.6.0.jar;C:\Users\hnd\.m2\repository\org\junit\jupiter\junit-jupiter-engine\5.6.0\junit-jupiter-engine-5.6.0.jar;C:\Users\hnd\.m2\repository\org\junit\platform\junit-platform-engine\1.6.0\junit-platform-engine-1.6.0.jar;"/>
+    <property name="surefire.test.class.path" value="C:\Users\hnd\Documents\NetBeansProjects\test-app\target\test-classes;C:\Users\hnd\Documents\NetBeansProjects\test-app\target\classes;C:\Users\hnd\.m2\repository\org\junit\jupiter\junit-jupiter-api\5.6.0\junit-jupiter-api-5.6.0.jar;C:\Users\hnd\.m2\repository\org\apiguardian\apiguardian-api\1.1.0\apiguardian-api-1.1.0.jar;C:\Users\hnd\.m2\repository\org\opentest4j\opentest4j\1.2.0\opentest4j-1.2.0.jar;C:\Users\hnd\.m2\repository\org\junit\platform\junit-platform-commons\1.6.0\junit-platform-commons-1.6.0.jar;C:\Users\hnd\.m2\repository\org\junit\jupiter\junit-jupiter-params\5.6.0\junit-jupiter-params-5.6.0.jar;C:\Users\hnd\.m2\repository\org\junit\jupiter\junit-jupiter-engine\5.6.0\junit-jupiter-engine-5.6.0.jar;C:\Users\hnd\.m2\repository\org\junit\platform\junit-platform-engine\1.6.0\junit-platform-engine-1.6.0.jar;C:\Users\hnd\.m2\repository\com\mysql\mysql-connector-j\8.0.33\mysql-connector-j-8.0.33.jar;C:\Users\hnd\.m2\repository\com\google\protobuf\protobuf-java\3.21.9\protobuf-java-3.21.9.jar;"/>
     <property name="sun.cpu.endian" value="little"/>
     <property name="user.home" value="C:\Users\hnd"/>
     <property name="user.language" value="en"/>
@@ -34,7 +36,7 @@
     <property name="java.specification.name" value="Java Platform API Specification"/>
     <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
     <property name="java.awt.graphicsenv" value="sun.awt.Win32GraphicsEnvironment"/>
-    <property name="surefire.real.class.path" value="C:\Users\hnd\AppData\Local\Temp\surefire10167641064363409347\surefirebooter-20230716103319013_3.jar"/>
+    <property name="surefire.real.class.path" value="C:\Users\hnd\AppData\Local\Temp\surefire3145633668603203590\surefirebooter-20230723124415348_3.jar"/>
     <property name="user.script" value=""/>
     <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
     <property name="java.runtime.version" value="11.0.19+7"/>
@@ -44,6 +46,7 @@
     <property name="java.runtime.name" value="OpenJDK Runtime Environment"/>
     <property name="file.encoding" value="UTF-8"/>
     <property name="java.vm.name" value="OpenJDK 64-Bit Server VM"/>
+    <property name="jpda.listen" value="true"/>
     <property name="java.vendor.version" value="Temurin-11.0.19+7"/>
     <property name="maven.ext.class.path" value="C:\Program Files\NetBeans-18\netbeans\java\maven-nblib\netbeans-eventspy.jar"/>
     <property name="localRepository" value="C:\Users\hnd\.m2\repository"/>
@@ -61,12 +64,9 @@
     <property name="java.vm.version" value="11.0.19+7"/>
     <property name="sun.io.unicode.encoding" value="UnicodeLittle"/>
     <property name="java.class.version" value="55.0"/>
+    <property name="maven.surefire.debug" value="-agentlib:jdwp=transport=dt_socket,server=n,address=58421"/>
   </properties>
-  <testcase name="testGetStudent" classname="com.mycompany.test.app.MySQLUtilsTest" time="0.037">
-    <system-out><![CDATA[getStudent
-]]></system-out>
-  </testcase>
-  <testcase name="testCRUDOperations" classname="com.mycompany.test.app.MySQLUtilsTest" time="0.003">
+  <testcase name="testCRUDOperations" classname="com.mycompany.test.app.MySQLUtilsTest" time="66.496">
     <system-out><![CDATA[testCRUDOperations
 ]]></system-out>
   </testcase>

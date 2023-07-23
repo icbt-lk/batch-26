@@ -9,26 +9,24 @@ package com.mycompany.test.app;
  * @author hnd
  */
 public class Student {
-    private String no;
+    private int no;
     private String name;
     private String dob;
-    private String gender;
 
     public Student() {
     }
 
-    public Student(String no, String name, String dob, String gender) {
+    public Student(int no, String name, String dob) {
         this.no = no;
         this.name = name;
         this.dob = dob;
-        this.gender = gender;
     }
 
-    public String getNo() {
+    public int getNo() {
         return no;
     }
 
-    public void setNo(String no) {
+    public void setNo(int no) {
         this.no = no;
     }
 
@@ -47,14 +45,4 @@ public class Student {
     public void setDob(String dob) {
         this.dob = dob;
     }
-
-    public String getGender() {
-        return gender;
-    }
-
-    public void setGender(String gender) {
-        this.gender = gender;
-    }
-    
-    
 }

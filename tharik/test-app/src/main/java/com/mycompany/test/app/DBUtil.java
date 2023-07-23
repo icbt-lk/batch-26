@@ -13,11 +13,11 @@ import java.util.List;
 public interface DBUtil {
     public List<Student> getStudents();
     
-    public Student getStudent(String stNo);
+    public Student getStudent(int stNo);
     
     public boolean addStudent(Student st);
     
     public boolean updateStudent(Student st);
     
-    public boolean deleteStudent(String stNo);
+    public boolean deleteStudent(int stNo);
 }
