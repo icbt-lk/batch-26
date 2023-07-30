@@ -1,0 +1,5 @@
+db\Student.class
+com\mycompany\rest\service\resources\StudentResource.class
+com\mycompany\rest\service\JAXRSConfiguration.class
+com\mycompany\rest\service\resources\JavaEE8Resource.class
+db\DBUtils.class
