@@ -9,7 +9,11 @@ import com.google.gson.GsonBuilder;
 import db.DBUtils;
 import db.Student;
 import java.util.List;
+import javax.ws.rs.Consumes;
+import javax.ws.rs.DELETE;
 import javax.ws.rs.GET;
+import javax.ws.rs.POST;
+import javax.ws.rs.PUT;
 import javax.ws.rs.Path;
 import javax.ws.rs.PathParam;
 import javax.ws.rs.Produces;
@@ -26,18 +30,70 @@ public class StudentResource {
     @GET
     @Produces(MediaType.APPLICATION_JSON)
     @Path("{id}")
-    public String getStudent(@PathParam("id") int id) {
+    public Response getStudent(@PathParam("id") int id) {
         DBUtils utils = new DBUtils(); 
-        Student st = utils.getStudent(id);
-        Gson gson = new GsonBuilder().create();
-        return  gson.toJson(st);
+        
+        try {
+            Student st = utils.getStudent(id);
+            if (st == null) {
+                return Response.status(404).build();
+            } else {
+                Gson gson = new GsonBuilder().create();
+                return Response.status(200).entity(gson.toJson(st)).build();
+            }  
+        } catch(Exception e) {
+            return Response.status(500).build();
+        }   
     }
     
     @GET
-    public String getStudents() {
+    @Produces(MediaType.APPLICATION_JSON)
+    public Response getStudents() {
          DBUtils utils = new DBUtils(); 
          List<Student> students = utils.getStudents();
          Gson gson = new GsonBuilder().create();
-         return  gson.toJson(students);
+         return Response.status(200).entity(gson.toJson(students)).build();
+    }
+    
+    @POST
+    @Consumes(MediaType.APPLICATION_JSON)
+    public Response addStudent(String json) {
+        Gson gson = new GsonBuilder().create();
+        Student student = gson.fromJson(json, Student.class);
+        
+        DBUtils utils = new DBUtils(); 
+        boolean result = utils.addStudent(student);
+        if (result) {
+            return Response.status(201).build();
+        } else {
+            return Response.status(500).build();
+        }
+    }
+    
+    @PUT
+    @Consumes(MediaType.APPLICATION_JSON)
+    public Response updateStudent(String json) {
+        Gson gson = new GsonBuilder().create();
+        Student student = gson.fromJson(json, Student.class);
+        
+        DBUtils utils = new DBUtils(); 
+        boolean result = utils.updateStudent(student);
+        if (result) {
+            return Response.status(200).build();
+        } else {
+            return Response.status(500).build();
+        }
+    }
+    
+    @DELETE
+    @Path("{id}")
+    public Response deleteStudent(@PathParam("id") int id) {
+        DBUtils utils = new DBUtils(); 
+        boolean result = utils.deleteStudent(id);
+        if (result) {
+            return Response.status(200).build();
+        } else {
+            return Response.status(500).build();
+        }
     }
 }

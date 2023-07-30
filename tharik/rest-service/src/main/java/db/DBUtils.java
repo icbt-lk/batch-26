@@ -47,7 +47,7 @@ public class DBUtils {
         return students;
     }
     
-    public Student getStudent(int id) {
+    public Student getStudent(int id) throws Exception {
         Student student = null;
         
         try {
@@ -65,9 +65,11 @@ public class DBUtils {
                 }
              } catch (SQLException e) {
                  System.out.println(e);
+                 throw e;
              } 
         } catch(SQLException e) {
             System.out.println(e);
+            throw e;
         }     
        
         return student;
